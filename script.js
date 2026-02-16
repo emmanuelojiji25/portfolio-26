@@ -76,12 +76,14 @@ window.addEventListener('scroll', () => {
 function openScreenshotModal(element) {
     const modal = document.getElementById('screenshotModal');
     const modalImg = document.getElementById('modalImage');
-    const img = element.querySelector('.screenshot-img');
+    const img = element.querySelector('.screenshot-img') || element.querySelector('.screenshot-img-landscape');
     
-    modal.classList.add('active');
-    modalImg.src = img.src;
-    modalImg.alt = img.alt;
-    document.body.style.overflow = 'hidden';
+    if (img) {
+        modal.classList.add('active');
+        modalImg.src = img.src;
+        modalImg.alt = img.alt;
+        document.body.style.overflow = 'hidden';
+    }
 }
 
 function closeScreenshotModal() {
