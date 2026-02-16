@@ -71,3 +71,28 @@ window.addEventListener('scroll', () => {
         }
     });
 });
+
+// Screenshot Modal Functions
+function openScreenshotModal(element) {
+    const modal = document.getElementById('screenshotModal');
+    const modalImg = document.getElementById('modalImage');
+    const img = element.querySelector('.screenshot-img');
+    
+    modal.classList.add('active');
+    modalImg.src = img.src;
+    modalImg.alt = img.alt;
+    document.body.style.overflow = 'hidden';
+}
+
+function closeScreenshotModal() {
+    const modal = document.getElementById('screenshotModal');
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+// Close modal on Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        closeScreenshotModal();
+    }
+});

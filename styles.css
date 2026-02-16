@@ -16,7 +16,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: arial !important;
 }
 
 html {
@@ -130,7 +129,6 @@ body {
   margin: 0 auto;
   padding: 0 2rem;
   padding-top: 6rem;
-  margin-top: 50px;
 }
 
 .hero {
@@ -242,12 +240,6 @@ body {
   background-color: var(--color-card-bg);
   border: 1px solid var(--color-border);
   aspect-ratio: 4/3;
-}
-.case-study-image img {
-  -o-object-fit: cover;
-     object-fit: cover;
-  width: 100%;
-  height: 100%;
 }
 
 .case-study-image-placeholder {
@@ -394,6 +386,121 @@ body {
   font-size: 1.25rem;
   line-height: 1.7;
   color: var(--color-text);
+}
+
+.product-screenshots {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 3rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--color-border);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.screenshot-item {
+  flex: 0 0 auto;
+  cursor: pointer;
+}
+
+.screenshot-img {
+  width: 160px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: var(--transition);
+}
+.screenshot-img:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+.screenshot-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 2000;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  cursor: pointer;
+  -webkit-animation: fadeIn 0.3s ease-out;
+          animation: fadeIn 0.3s ease-out;
+}
+.screenshot-modal.active {
+  display: flex;
+}
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.screenshot-modal-content {
+  max-width: 90%;
+  max-height: 90vh;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  -webkit-animation: scaleIn 0.3s ease-out;
+          animation: scaleIn 0.3s ease-out;
+  cursor: default;
+}
+@-webkit-keyframes scaleIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes scaleIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.screenshot-modal-close {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: var(--color-accent);
+  transition: var(--transition);
+}
+.screenshot-modal-close:hover {
+  background: #ffffff;
+  transform: scale(1.1);
 }
 
 .case-study-section {
@@ -600,6 +707,48 @@ body {
   color: var(--color-text);
 }
 
+.subsection-title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--color-accent);
+}
+
+.viewing-modes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.viewing-mode-card {
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 2rem;
+  transition: var(--transition);
+}
+.viewing-mode-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.viewing-mode-title {
+  font-family: var(--font-display);
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: var(--color-accent);
+}
+
+.viewing-mode-text {
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: var(--color-text);
+}
+
 .case-study-footer {
   margin-top: 6rem;
   padding-top: 3rem;
@@ -680,6 +829,12 @@ body {
     grid-template-columns: 1fr;
     gap: 1rem;
   }
+  .product-screenshots {
+    gap: 1rem;
+  }
+  .screenshot-img {
+    width: 140px;
+  }
 }
 @media (max-width: 768px) {
   .nav-container {
@@ -729,6 +884,24 @@ body {
 .info-grid {
     grid-template-columns: 1fr;
     gap: 1rem;
+  }
+  .viewing-modes {
+    grid-template-columns: 1fr;
+  }
+  .product-screenshots {
+    gap: 0.75rem;
+    margin-top: 2.5rem;
+    padding-top: 2rem;
+  }
+  .screenshot-img {
+    width: 120px;
+  }
+  .screenshot-modal-close {
+    top: 1rem;
+    right: 1rem;
+    width: 36px;
+    height: 36px;
+    font-size: 1.25rem;
   }
   .footer-content {
     flex-direction: column;
