@@ -82,14 +82,14 @@ function openScreenshotModal(element) {
         modal.classList.add('active');
         modalImg.src = img.src;
         modalImg.alt = img.alt;
-        document.body.style.overflow = 'hidden';
+       
     }
 }
 
 function closeScreenshotModal() {
     const modal = document.getElementById('screenshotModal');
     modal.classList.remove('active');
-    document.body.style.overflow = '';
+
 }
 
 // Close modal on Escape key
