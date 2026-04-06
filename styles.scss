@@ -131,6 +131,33 @@ body {
     padding-top: 6rem;
 }
 
+.billboard{
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+
+    .billboard-title {
+        font-family: var(--font-display);
+        font-size: clamp(2.5rem, 3vw, 4.5rem);
+        font-weight: 400;
+        line-height: 1.1;
+        color: var(--color-accent);
+        margin-bottom: 1.5rem;
+    }
+
+    animation: fadeInUp 0.8s ease-out 0.2s both;
+
+    @keyframes fadeInUp {
+        from {
+            transform: translateY(30px);
+            opacity: 0;
+        }
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+}
+
 // Hero
 .hero {
     padding: 6rem 0 8rem;

@@ -7,8 +7,8 @@
   --color-accent-light: #334155;
   --color-border: #e7e5e4;
   --color-card-bg: #ffffff;
-  --font-display: "Crimson Pro", serif;
-  --font-body: "DM Sans", sans-serif;
+  --font-display: 'Crimson Pro', serif;
+  --font-body: 'DM Sans', sans-serif;
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -38,22 +38,10 @@ body {
   left: 0;
   right: 0;
   background-color: rgba(250, 250, 249, 0.8);
-  -webkit-backdrop-filter: blur(12px);
-          backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--color-border);
   z-index: 1000;
-  -webkit-animation: slideDown 0.6s ease-out;
-          animation: slideDown 0.6s ease-out;
-}
-@-webkit-keyframes slideDown {
-  from {
-    transform: translateY(-100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
+  animation: slideDown 0.6s ease-out;
 }
 @keyframes slideDown {
   from {
@@ -132,12 +120,22 @@ body {
   padding-top: 6rem;
 }
 
-.hero {
-  padding: 6rem 0 8rem;
-  -webkit-animation: fadeInUp 0.8s ease-out 0.2s both;
-          animation: fadeInUp 0.8s ease-out 0.2s both;
+.billboard {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
 }
-@-webkit-keyframes fadeInUp {
+.billboard .billboard-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 3vw, 4.5rem);
+  font-weight: 400;
+  line-height: 1.1;
+  color: var(--color-accent);
+  margin-bottom: 1.5rem;
+}
+.billboard {
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+@keyframes fadeInUp {
   from {
     transform: translateY(30px);
     opacity: 0;
@@ -146,6 +144,11 @@ body {
     transform: translateY(0);
     opacity: 1;
   }
+}
+
+.hero {
+  padding: 6rem 0 8rem;
+  animation: fadeInUp 0.8s ease-out 0.2s both;
 }
 @keyframes fadeInUp {
   from {
@@ -173,28 +176,23 @@ body {
 
 .hero-title-line {
   display: block;
-  -webkit-animation: fadeInUp 0.8s ease-out both;
-          animation: fadeInUp 0.8s ease-out both;
+  animation: fadeInUp 0.8s ease-out both;
 }
 .hero-title-line:nth-child(1) {
-  -webkit-animation-delay: 0.3s;
-          animation-delay: 0.3s;
+  animation-delay: 0.3s;
 }
 .hero-title-line:nth-child(2) {
-  -webkit-animation-delay: 0.4s;
-          animation-delay: 0.4s;
+  animation-delay: 0.4s;
 }
 .hero-title-line:nth-child(3) {
-  -webkit-animation-delay: 0.5s;
-          animation-delay: 0.5s;
+  animation-delay: 0.5s;
 }
 
 .hero-subtitle {
   font-size: 1.25rem;
   color: var(--color-text-light);
   max-width: 600px;
-  -webkit-animation: fadeInUp 0.8s ease-out 0.6s both;
-          animation: fadeInUp 0.8s ease-out 0.6s both;
+  animation: fadeInUp 0.8s ease-out 0.6s both;
 }
 
 .case-studies {
@@ -204,16 +202,13 @@ body {
 .case-study-card {
   margin-bottom: 6rem;
   opacity: 0;
-  -webkit-animation: fadeInUp 0.8s ease-out both;
-          animation: fadeInUp 0.8s ease-out both;
+  animation: fadeInUp 0.8s ease-out both;
 }
 .case-study-card[data-index="0"] {
-  -webkit-animation-delay: 0.7s;
-          animation-delay: 0.7s;
+  animation-delay: 0.7s;
 }
 .case-study-card[data-index="1"] {
-  -webkit-animation-delay: 0.9s;
-          animation-delay: 0.9s;
+  animation-delay: 0.9s;
 }
 .case-study-card.coming-soon {
   opacity: 0.5;
@@ -351,8 +346,7 @@ body {
   margin-bottom: 5rem;
   padding-bottom: 3rem;
   border-bottom: 1px solid var(--color-border);
-  -webkit-animation: fadeInUp 0.8s ease-out 0.2s both;
-          animation: fadeInUp 0.8s ease-out 0.2s both;
+  animation: fadeInUp 0.8s ease-out 0.2s both;
 }
 
 .case-study-header-meta {
@@ -460,19 +454,10 @@ body {
   align-items: center;
   padding: 2rem;
   cursor: pointer;
-  -webkit-animation: fadeIn 0.3s ease-out;
-          animation: fadeIn 0.3s ease-out;
+  animation: fadeIn 0.3s ease-out;
 }
 .screenshot-modal.active {
   display: flex;
-}
-@-webkit-keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
 }
 @keyframes fadeIn {
   from {
@@ -488,19 +473,8 @@ body {
   max-height: 90vh;
   border-radius: 12px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-  -webkit-animation: scaleIn 0.3s ease-out;
-          animation: scaleIn 0.3s ease-out;
+  animation: scaleIn 0.3s ease-out;
   cursor: default;
-}
-@-webkit-keyframes scaleIn {
-  from {
-    transform: scale(0.9);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
 }
 @keyframes scaleIn {
   from {
@@ -538,32 +512,25 @@ body {
 .case-study-section {
   margin-bottom: 4rem;
   opacity: 0;
-  -webkit-animation: fadeInUp 0.8s ease-out both;
-          animation: fadeInUp 0.8s ease-out both;
+  animation: fadeInUp 0.8s ease-out both;
 }
 .case-study-section:nth-child(1) {
-  -webkit-animation-delay: 0.3s;
-          animation-delay: 0.3s;
+  animation-delay: 0.3s;
 }
 .case-study-section:nth-child(2) {
-  -webkit-animation-delay: 0.4s;
-          animation-delay: 0.4s;
+  animation-delay: 0.4s;
 }
 .case-study-section:nth-child(3) {
-  -webkit-animation-delay: 0.5s;
-          animation-delay: 0.5s;
+  animation-delay: 0.5s;
 }
 .case-study-section:nth-child(4) {
-  -webkit-animation-delay: 0.6s;
-          animation-delay: 0.6s;
+  animation-delay: 0.6s;
 }
 .case-study-section:nth-child(5) {
-  -webkit-animation-delay: 0.7s;
-          animation-delay: 0.7s;
+  animation-delay: 0.7s;
 }
 .case-study-section:nth-child(n+6) {
-  -webkit-animation-delay: 0.8s;
-          animation-delay: 0.8s;
+  animation-delay: 0.8s;
 }
 
 .section-title {
@@ -919,7 +886,7 @@ body {
     font-size: 1.75rem;
   }
   .stats-grid,
-.info-grid {
+  .info-grid {
     grid-template-columns: 1fr;
     gap: 1rem;
   }

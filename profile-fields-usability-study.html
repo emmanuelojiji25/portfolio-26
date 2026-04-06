@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile Fields Usability Study - Case Study</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;600&family=DM+Sans:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="case-study-page">
+    <nav class="nav">
+      <div class="nav-container">
+        <a href="index.html" class="nav-logo">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path
+              d="M13 3L6 10L13 17"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+          </svg>
+          Back
+        </a>
+        <div class="nav-links">
+          <a href="index.html" class="nav-link">Work</a>
+          <a href="#about" class="nav-link">About</a>
+          <a href="#contact" class="nav-link">Contact</a>
+        </div>
+      </div>
+    </nav>
+
+    <main class="main case-study-main">
+      <article class="case-study-article">
+        <header class="case-study-header">
+          <div class="case-study-header-meta">
+            <span class="case-study-category">User Research · Usability Testing</span>
+            <span class="case-study-date">2022</span>
+          </div>
+          <h1 class="case-study-header-title">Customising Profile Fields Usability Study</h1>
+          <p class="case-study-header-subtitle">
+            UI Design Engineer · Hive Learning
+          </p>
+          <p class="case-study-header-intro">
+            A moderated usability study conducted to validate a new feature
+            allowing organisation admins to manage their own profile fields.
+            This was the first time Hive Learning had run structured usability
+            testing, and the findings fed directly into fixes shipped before
+            release.
+          </p>
+        </header>
+
+        <section class="case-study-section">
+          <h2 class="section-title">Role &amp; Scope</h2>
+          <div class="role-grid">
+            <div class="role-item">Test script writing</div>
+            <div class="role-item">Participant recruitment</div>
+            <div class="role-item">Remote session facilitation</div>
+            <div class="role-item">Use case creation</div>
+            <div class="role-item">Findings documentation</div>
+            <div class="role-item">Accessibility review</div>
+          </div>
+        </section>
+
+        <section class="case-study-section">
+          <h2 class="section-title">Background</h2>
+          <p class="section-text">
+            Hive Learning is a corporate e-learning platform used by
+            organisations to run learning programmes for their teams. Each
+            organisation has a set of profile fields that describe their users,
+            things like job title, department, or location. Up until this point,
+            any time an organisation needed to add, update or remove a profile
+            field, someone at Hive Learning had to do it manually on their
+            behalf.
+          </p>
+          <p class="section-text">
+            Customising Profile Fields was a new feature designed to change
+            that. It gave organisation admins a self-serve interface to manage
+            their own fields without needing to raise a request. Admins could
+            create new fields, choose the field type, set labels and
+            placeholders, control visibility settings, and connect fields to
+            third-party data providers like UKG Pro.
+          </p>
+          <p class="section-text">
+            Before shipping, the team wanted to test whether admins could
+            actually use it without running into problems. This was the study
+            to find that out.
+          </p>
+        </section>
+
+        <section class="case-study-section">
+          <h2 class="section-title">My Role</h2>
+          <p class="section-text">
+            I was a UI Design Engineer at Hive Learning, sitting within the
+            engineering team with a focus on UI and UX. This study was
+            something I led end to end. I wrote the test scripts and prompts,
+            recruited the participants, facilitated each session remotely, and
+            documented the findings.
+          </p>
+          <p class="section-text">
+            It was also the first time the team had run structured usability
+            testing, so part of the work was establishing how to approach it
+            and making the case for doing it at all.
+          </p>
+        </section>
+
+        <section class="case-study-section">
+          <h2 class="section-title">Approach</h2>
+          <p class="section-text">
+            I recruited five participants and ran each session remotely. The
+            sessions were moderated, meaning I was present throughout and could
+            observe where people hesitated, got confused, or took an unexpected
+            path.
+          </p>
+          <p class="section-text">
+            I structured the study around seven prompts, each corresponding to
+            a key action an admin might need to take in the feature. Rather
+            than asking participants what they thought of the interface, I gave
+            them realistic tasks to complete and watched what happened. The
+            goal was to see whether the feature worked in practice, not just
+            whether it looked right.
+          </p>
+          <p class="section-text">
+            The prompts covered navigating to the profile fields screen, adding
+            a text field, adding a dropdown field with multiple options,
+            editing an existing field, disabling a field from a data provider,
+            finding help documentation, and adding a translation for a field.
+          </p>
+        </section>
+
+        <section class="case-study-section">
+          <h2 class="section-title">Findings</h2>
+          <p class="section-text">
+            Most tasks were completed without significant difficulty. The main
+            interface was clear and participants generally knew where to go.
+            The issues that came up were specific and fixable, which was a
+            useful outcome in itself.
+          </p>
+
+          <h3 class="subsection-title">What worked well</h3>
+          <p class="section-text">
+            Participants found the add field button easy to locate and
+            self-explanatory. Navigating to the profile fields screen caused
+            no real confusion. Editing an existing field was the quickest task
+            in the whole study, with participants finding the manage button and
+            completing the action with very little friction. The status banner
+            on the modal, showing whether a field was currently enabled or
+            disabled, was also noted as clear and useful.
+          </p>
+
+          <h3 class="subsection-title">Issues identified</h3>
+          <p class="section-text">
+            The most significant usability issue was a bug in the dropdown
+            field creation flow. When participants added a new dropdown option,
+            the new option appeared behind a fixed element and couldn't be
+            scrolled to. For the first three sessions, this meant participants
+            couldn't complete the task at all. It was fixed before the fourth
+            session.
+          </p>
+          <p class="section-text">
+            The private and read only checkboxes caused confusion across
+            multiple participants. Several ticked them without understanding
+            what they did, and others skipped them entirely. When asked, one
+            participant guessed that private would hide a field and read only
+            would make it visible but not editable, which was a reasonable
+            guess but not accurate enough to act on confidently. A tooltip or
+            short description would have helped significantly here.
+          </p>
+          <p class="section-text">
+            The label and value fields within dropdown options also caused
+            uncertainty. Participants weren't sure what the difference was or
+            which one would be visible to users.
+          </p>
+          <p class="section-text">
+            Finding help documentation was the hardest task. Every participant
+            struggled with it. There was no clear path to guidance from within
+            the feature itself.
+          </p>
+
+          <h3 class="subsection-title">Accessibility gaps</h3>
+          <p class="section-text">
+            One participant used a screen reader throughout the study. Their
+            feedback surfaced a set of issues that wouldn't have been caught
+            through standard testing. When the modal opened, focus didn't move
+            to it automatically, meaning screen reader users had to navigate
+            to it manually. There was no confirmation message when changes
+            were saved, so there was no feedback that the action had worked.
+            And closing the modal with the escape key wasn't supported, which
+            is a standard expectation for keyboard users.
+          </p>
+          <p class="section-text">
+            There was also no alt text or label on the data provider image,
+            making it difficult to identify specific fields when navigating
+            by screen reader.
+          </p>
+        </section>
+
+        <section class="case-study-section">
+          <h2 class="section-title">Outcome</h2>
+          <p class="section-text">
+            The findings were shared with the engineering team and the key
+            issues were addressed before release. The scroll bug was resolved,
+            modal focus was added so screen readers would land in the right
+            place on open, and tooltips were introduced on the private and
+            read only checkboxes to explain what each one did.
+          </p>
+          <p class="section-text">
+            Beyond the specific fixes, the study changed how the team thought
+            about testing. Having structured evidence of where users got stuck,
+            including issues that had gone unnoticed during development, made
+            the value of the process hard to argue with. It opened the door
+            to usability testing becoming a more regular part of how the team
+            worked.
+          </p>
+        </section>
+
+        <section class="case-study-section">
+          <h2 class="section-title">What I Learned</h2>
+          <div class="learnings-list">
+            <div class="learning-item">
+              <span class="learning-number">01</span>
+              <p class="learning-text">
+                Watching someone use something tells you far more than asking
+                them what they think of it. Several issues in this study only
+                surfaced because I could see participants hesitate or take
+                a wrong turn, not because they flagged a problem directly.
+              </p>
+            </div>
+            <div class="learning-item">
+              <span class="learning-number">02</span>
+              <p class="learning-text">
+                Including a screen reader user changed the quality of the
+                findings significantly. The accessibility gaps that came up
+                were real issues that affected usability for those users,
+                and they wouldn't have been caught any other way.
+              </p>
+            </div>
+            <div class="learning-item">
+              <span class="learning-number">03</span>
+              <p class="learning-text">
+                Terminology that feels obvious to the team building something
+                can be completely opaque to the people using it. Private,
+                read only, label, value; none of these caused confusion
+                internally, but participants struggled with all of them.
+              </p>
+            </div>
+            <div class="learning-item">
+              <span class="learning-number">04</span>
+              <p class="learning-text">
+                Getting findings in front of engineers with clear, observed
+                evidence made it easier to prioritise fixes. It shifted the
+                conversation from opinion to fact.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <footer class="case-study-footer">
+          <a href="index.html" class="back-link">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path
+                d="M15 6L9 12L15 18"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+            </svg>
+            Back to all projects
+          </a>
+        </footer>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-content">
+        <p>&copy; 2026. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

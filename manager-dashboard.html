@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Warehouse Performance Dashboard - Case Study</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;600&family=DM+Sans:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="case-study-page">
+    <nav class="nav">
+      <div class="nav-container">
+        <a href="index.html" class="nav-logo">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path
+              d="M13 3L6 10L13 17"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+          </svg>
+          Back
+        </a>
+        <div class="nav-links">
+          <a href="index.html" class="nav-link">Work</a>
+          <a href="#about" class="nav-link">About</a>
+          <a href="#contact" class="nav-link">Contact</a>
+        </div>
+      </div>
+    </nav>
+
+    <main class="main case-study-main">
+      <article class="case-study-article">
+        <header class="case-study-header">
+          <div class="case-study-header-meta">
+            <span class="case-study-category">UX Design · Internal Tooling</span>
+            <span class="case-study-date">2025</span>
+          </div>
+          <h1 class="case-study-header-title">Warehouse Performance Dashboard</h1>
+          <p class="case-study-header-subtitle">
+            Product Designer · EU Automation
+          </p>
+          <p class="case-study-header-intro">
+            An in-house performance tracking system built to replace manual
+            spreadsheet reporting. It gave warehouse managers across global
+            locations real-time, reliable visibility into daily fulfilment
+            without relying on self-reported data from staff.
+          </p>
+
+          <div class="product-screenshots">
+            <div class="screenshot-item" onclick="openScreenshotModal(this)">
+              <img
+                src="rerporter-1.png"
+                alt="Warehouse Dashboard Tracker Tab"
+                class="screenshot-img"
+              />
+            </div>
+            <div class="screenshot-item" onclick="openScreenshotModal(this)">
+              <img
+                src="reporter-2.png"
+                alt="Warehouse Dashboard Calendar Tab"
+                class="screenshot-img"
+              />
+            </div>
+          </div>
+
+          <!-- Screenshot Modal -->
+          <div
+            class="screenshot-modal"
+            id="screenshotModal"
+            onclick="closeScreenshotModal()"
+          >
+            <button
+              class="screenshot-modal-close"
+              onclick="closeScreenshotModal()"
+            >
+              &times;
+            </button>
+            <img
+              src=""
+              alt="Screenshot enlarged"
+              class="screenshot-modal-content"
+              id="modalImage"
+              onclick="event.stopPropagation()"
+            />
+          </div>
+        </header>
+
+        <section class="case-study-section">
+          <h2 class="section-title">Role &amp; Scope</h2>
+          <div class="role-grid">
+            <div class="role-item">UX/UI Design</div>
+            <div class="role-item">User research</div>
+            <div class="role-item">Stakeholder interviews</div>
+            <div class="role-item">Feasibility collaboration with engineering</div>
+            <div class="role-item">Dashboard architecture</div>
+            <div class="role-item">Data visualisation design</div>
+          </div>
+        </section>
+
+        <section class="case-study-section">
+          <h2 class="section-title">The Problem</h2>
+          <p class="section-text">
+            EU Automation's warehouse teams had no reliable way to track
+            package fulfilment. Performance data was entered manually into
+            spreadsheets and pulled into Google Looker, but the process was
+            slow and the data wasn't trustworthy. Managers were working off
+            figures that employees had self-reported, which often came in late,
+            incomplete, or not at all.
+          </p>
+          <p class="section-text">
+            The knock-on effect was real. Without accurate visibility, managers
+            couldn't spot delays early enough to act on them. Packages were
+            arriving late, and complaints were coming in from customers.
+          </p>
+          <p class="section-text">
+            The problem wasn't that managers lacked the right tools to analyse
+            data. It was that the data itself couldn't be trusted.
+          </p>
+        </section>
+
+        <section class="case-study-section">
+          <h2 class="section-title">Research</h2>
+          <p class="section-text">
+            I started by speaking to warehouse managers and going through the
+            existing spreadsheets and Looker setup with them. I wanted to
+            understand what they were actually trying to track, what decisions
+            they were trying to make, and where things were falling short.
+          </p>
+          <p class="section-text">
+            I also spoke to warehouse employees about how they were reporting
+            their work. They found the process cumbersome. It was an extra
+            admin task on top of their main job, so it often got deprioritised.
+            That conversation shifted my understanding of the problem. The
+            inaccurate data wasn't just a systems issue; it was partly a design
+            issue. The reporting process was too friction-heavy to be done
+            consistently.
+          </p>
+          <p class="section-text">
+            From there, I worked with the engineering team to understand what
+            was possible through VIEW, the company's internal package management
+            system. That conversation shaped the direction of the whole project.
+          </p>
+        </section>
+
+        <section class="case-study-section">
+          <h2 class="section-title">The Solution</h2>
+          <p class="section-text">
+            Rather than improving the reporting process, we removed it. By
+            connecting the dashboard directly to VIEW, every package fulfilment
+            was recorded automatically. Staff didn't need to log anything
+            separately; it just happened as part of their normal workflow.
+          </p>
+          <p class="section-text">
+            This meant managers were looking at live, accurate data rather than
+            a snapshot of what people remembered to submit. The reliability
+            issue was solved at the source.
+          </p>
+        </section>
+
+        <section class="case-study-section">
+          <h2 class="section-title">Dashboard Design</h2>
+
+          <h3 class="subsection-title">Tracker Tab</h3>
+          <p class="section-text">
+            The Tracker tab was built for managers who needed to look at
+            individual employee performance. A filter bar at the top let them
+            narrow results by date, time of day, and warehouse location,
+            covering sites in Singapore, Chicago and the United Kingdom.
+          </p>
+          <p class="section-text">
+            Below the filters, a summary figure shows the total number of
+            packages to be fulfilled for the selected period. Each employee
+            then appears as a card with two pill indicators: green for packages
+            fulfilled, and blue for their total target. The colour coding meant
+            managers could scan the list quickly and pick out where someone was
+            falling behind without having to compare numbers individually.
+          </p>
+          <p class="section-text">
+            Expanding any card reveals a bar chart showing output over time,
+            which was useful for spotting patterns rather than just a
+            point-in-time figure. The full view could also be exported as a CSV.
+          </p>
+
+          <h3 class="subsection-title">Calendar Tab</h3>
+          <p class="section-text">
+            The Calendar tab was designed for a different kind of question.
+            Rather than drilling into individual staff, it gave managers a
+            daily operational overview, showing arrived, shipped, and estimated
+            figures for each day, colour-coded by volume threshold.
+          </p>
+
+          <div class="viewing-modes">
+            <div class="viewing-mode-card">
+              <h4 class="viewing-mode-title" style="color: #4caf50;">Green</h4>
+              <p class="viewing-mode-text">
+                Volume is at an acceptable level. No action needed.
+              </p>
+            </div>
+            <div class="viewing-mode-card">
+              <h4 class="viewing-mode-title" style="color: #ff9800;">Orange</h4>
+              <p class="viewing-mode-text">
+                Performance could be better. Worth looking into before it
+                becomes a problem.
+              </p>
+            </div>
+            <div class="viewing-mode-card">
+              <h4 class="viewing-mode-title" style="color: #f44336;">Red</h4>
+              <p class="viewing-mode-text">
+                Unacceptable volume. Immediate attention needed.
+              </p>
+            </div>
+          </div>
+
+          <p class="section-text">
+            The colour system meant managers could read the health of operations
+            at a glance, then use the Tracker tab to dig into the detail where
+            needed. The two tabs were designed to work together in that way:
+            broad picture first, specifics when required.
+          </p>
+        </section>
+
+        <section class="case-study-section">
+          <h2 class="section-title">Design Decisions</h2>
+          <p class="section-text">
+            The main thing I kept coming back to was how quickly a manager
+            needed to understand what was on screen. These are busy people
+            checking in between other tasks, not sitting down to study a
+            report. The interface needed to communicate status quickly, with
+            as little reading as possible.
+          </p>
+          <p class="section-text">
+            That's why the pill indicators and colour coding did most of the
+            work rather than raw numbers. A green pill next to an employee name
+            tells you what you need to know without any mental arithmetic.
+          </p>
+          <p class="section-text">
+            The filters were important too. Managers at different locations
+            think about their operations differently. Giving them control over
+            the view meant the dashboard felt relevant to their specific context
+            rather than a generic report that needed interpreting.
+          </p>
+        </section>
+
+        <section class="case-study-section">
+          <h2 class="section-title">Constraints &amp; Challenges</h2>
+          <p class="section-text">
+            The integration with VIEW was the biggest constraint. What the
+            dashboard could show was tied to what VIEW could expose, so I
+            worked closely with engineering throughout to understand what was
+            and wasn't possible. A couple of ideas had to be dropped because
+            the data wasn't available at the right level of detail.
+          </p>
+          <p class="section-text">
+            Designing for three different locations also added complexity. Each
+            site had different team sizes, different volumes and different ways
+            of working. The filter system needed to handle that without making
+            the interface feel cluttered.
+          </p>
+          <p class="section-text">
+            There was also a balance to strike between two types of manager
+            using the tool: those who wanted a quick operational overview and
+            those who needed to look at specific employees in detail. The
+            two-tab structure came out of trying to serve both without
+            compromising either.
+          </p>
+        </section>
+
+        <section class="case-study-section">
+          <h2 class="section-title">Outcome</h2>
+          <p class="section-text">
+            The dashboard shipped and was adopted across the business. Managers
+            described it as a game changer, which was good to hear given how
+            entrenched the spreadsheet process had been.
+          </p>
+          <p class="section-text">
+            The most significant shift was having data that managers could
+            actually rely on. Performance conversations, escalations and
+            planning all became easier because everyone was working from the
+            same accurate picture. Reports that had previously taken time to
+            pull together were now available instantly.
+          </p>
+          <p class="section-text">
+            Removing the manual logging step also made things easier for
+            warehouse staff, which wasn't the primary goal but was a welcome
+            result.
+          </p>
+        </section>
+
+        <section class="case-study-section">
+          <h2 class="section-title">What I Learned</h2>
+          <div class="learnings-list">
+            <div class="learning-item">
+              <span class="learning-number">01</span>
+              <p class="learning-text">
+                Sometimes the right move is to remove a broken process rather
+                than improve it. Trying to make manual reporting more reliable
+                would have been the wrong direction. Automating the data
+                collection through VIEW solved the problem properly.
+              </p>
+            </div>
+            <div class="learning-item">
+              <span class="learning-number">02</span>
+              <p class="learning-text">
+                Speaking to warehouse employees was just as important as
+                speaking to managers. Managers could tell me what data they
+                weren't getting. Employees explained why the data was
+                unreliable in the first place. I wouldn't have reached the
+                right solution without both perspectives.
+              </p>
+            </div>
+            <div class="learning-item">
+              <span class="learning-number">03</span>
+              <p class="learning-text">
+                Getting engineering involved early made a real difference.
+                Understanding the constraints of VIEW before designing anything
+                saved time and kept the work grounded in what was actually
+                buildable.
+              </p>
+            </div>
+            <div class="learning-item">
+              <span class="learning-number">04</span>
+              <p class="learning-text">
+                Internal tools are easy to undervalue from a design standpoint,
+                but the people using them have just as much at stake as any
+                consumer product user. Getting the usability right had a direct
+                impact on the business.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <footer class="case-study-footer">
+          <a href="index.html" class="back-link">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path
+                d="M15 6L9 12L15 18"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+            </svg>
+            Back to all projects
+          </a>
+        </footer>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-content">
+        <p>&copy; 2026. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
